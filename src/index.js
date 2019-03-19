@@ -48,10 +48,12 @@ exports.handler = async (event, _, callback) => {
     .optional('accounts'))
     .match(
       ({ data }) => respond(200, JSON.stringify(
-        data.map(({ picture, instagram_business_account }) => ({
-          username: instagram_business_account.username,
-          image: picture.data.url,
-        }))
+        data
+          .filter(({ instagram_business_account }) => instagram_business_account && instagram_business_account.username)
+          .map(({ picture, instagram_business_account }) => ({
+            username: instagram_business_account.username,
+            image: picture.data.url,
+          }))
       )),
       () => respond(404),
     )

@@ -1,16 +1,16 @@
 {
-  "name": "lambda-fb-accounts",
+  "name": "lambda-ig-accounts",
   "version": "1.0.0",
   "description": "Verifies new Instagram API webhooks.",
   "main": "src/index.js",
   "scripts": {
     "test": "mocha test/setup.js test/**/*.spec.js",
-    "create:prod": "claudia create --name prod-fb-accounts --region eu-west-1 --handler src/index.handler --role arn:aws:iam::351847414812:role/BasicExecutor --config claudia-prod.json",
+    "create:prod": "claudia create --name prod-ig-accounts --region eu-west-1 --handler src/index.handler --role arn:aws:iam::351847414812:role/BasicExecutor --config claudia-prod.json",
     "deploy:prod": "claudia update --config claudia-prod.json"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/muffin-rewards/lambda-fb-accounts"
+    "url": "https://github.com/muffin-rewards/lambda-ig-accounts"
   },
   "author": {
     "name": "Michael Bausano",
